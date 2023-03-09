@@ -1,7 +1,5 @@
 package com.datastructure;
 
-import java.util.Scanner;
-
 public class Node {
     Object data;
     Node next;
@@ -16,12 +14,17 @@ public class Node {
     }
     public void creation(int d){
         Node newNode = new Node(d);
-        if(head==null){
-            head = newNode;//if linked list is  empty then create first node to the linked list
-        }else{
-            newNode.next=head;//the address inside head is assigned to next of newNode
-            head=newNode;//data inside newNode is assigned to head
+        if (head == null) {
+            head = newNode;
+            System.out.println("First node is "+newNode.data);
+            return;
         }
+        //below code appends the given node
+        Node tempNode = head;
+        while (tempNode.next != null) {
+            tempNode = tempNode.next;
+        }
+        tempNode.next = newNode;
     }
     public void traverse(){
         Node tempNode = head;//declaration and initialization a tempNode of type Node
@@ -36,4 +39,5 @@ public class Node {
         }
         System.out.println("null");
     }
+
 }
