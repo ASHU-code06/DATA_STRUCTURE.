@@ -54,9 +54,9 @@ public class Node {
     }
     public void delete(int data){
 
-      if(head==null){
-          System.out.println("Linked list is empty");
-      }
+        if(head==null){
+            System.out.println("Linked list is empty");
+        }
         System.out.println("\nThis is a deletion method  to delete any node");
         System.out.println("Enter 1 to delete from begining");
         System.out.println("Enter 2 to delete from end");
@@ -86,11 +86,11 @@ public class Node {
             System.out.println("Linked List does not exit");
         }else{
             while(tempNode!=null){//LOOP WILL CONTINUE TILL tempNode IS NOT NULL
-             if(tempNode.data==searchNode.data) {
-                 System.out.println("Yes linked has this node ");
-                 System.out.print(tempNode.data + "=>");
-                 return true;
-             }
+                if(tempNode.data==searchNode.data) {
+                    System.out.println("Yes linked has this node ");
+                    System.out.print(tempNode.data + "=>");
+                    return true;
+                }
                 tempNode=tempNode.next;//moving tempNode across the linked list , till null is reached
             }
         }
