@@ -51,6 +51,7 @@ public class Node {
         }
         new_node.next = tempNode.next;
         tempNode.next = new_node;
+        traverse();
     }
     public void delete(int data){
 
@@ -84,8 +85,6 @@ public class Node {
         }else{
             while(tempNode!=null){//LOOP WILL CONTINUE TILL tempNode IS NOT NULL
              if(tempNode.data==searchNode.data) {
-                 System.out.println("Yes linked has this node ");
-                 System.out.print(tempNode.data + "=>");
                  return true;
              }
                 tempNode=tempNode.next;//moving tempNode across the linked list , till null is reached
