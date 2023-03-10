@@ -35,17 +35,13 @@ public class Node {
         }
         tempNode.next = newNode;
     }
-    public void addAtDesiredPos(int data){
-        System.out.println("In above linked list , Enter the position at which node is to be inserted");
-        int p;
-        Scanner sc = new Scanner(System.in);
-        p = sc.nextInt();
+    public void addAtDesiredPos(int data, int position){
         Node new_node = new Node(data);
         Node tempNode=head;
-        if (p==1){
+        if (position==1){
             creation(data);
         }
-        for (int i=1;i<(p-1);i++) {
+        for (int i=1;i<(position-1);i++) {
             if(tempNode==null){
                 System.out.println(" null");
             }
@@ -73,9 +69,42 @@ public class Node {
             case 2:
                 deleteLast();
                 break;
+            case 3:
+                deleteAtDesiredPosition();
+                break;
             default:
                 System.out.println("Invalid input");
         }
+    }
+    public boolean search(int data){
+        Node searchNode = new Node(data);
+        Node tempNode = head;//declaration and initialization a tempNode of type Node
+        if(tempNode==null){
+            System.out.println("Linked List does not exit");
+        }else{
+            while(tempNode!=null){//LOOP WILL CONTINUE TILL tempNode IS NOT NULL
+             if(tempNode.data==searchNode.data) {
+                 System.out.println("Yes linked has this node ");
+                 System.out.print(tempNode.data + "=>");
+                 return true;
+             }
+                tempNode=tempNode.next;//moving tempNode across the linked list , till null is reached
+            }
+        }
+        return false;
+    }
+    public void deleteAtDesiredPosition(){
+        Scanner input = new Scanner(System.in);
+        int p=0;
+        System.out.println("Enter position");
+        p=input.nextInt();
+        Node current_node=head;
+        Node previous_node=current_node.next;
+        for(int i=0;i<p-2;i++){
+            current_node=previous_node;
+            previous_node=previous_node.next;
+        }
+        current_node.next=previous_node.next;
     }
     public void deleteLast(){
         Node tempNode = head;//it is a temporary node that is equal to head
@@ -109,5 +138,6 @@ public class Node {
         }
         System.out.println("null");
     }
+
 
 }
