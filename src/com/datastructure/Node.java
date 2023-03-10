@@ -70,12 +70,6 @@ public class Node {
             case 1:
                 deletefirst();
                 break;
-            case 2:
-                deleteLast();
-                break;
-            case 3:
-                deleteAtDesiredPosition();
-                break;
             default:
                 System.out.println("Invalid input");
         }
