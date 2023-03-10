@@ -30,5 +30,13 @@ public class StackUsingLinkedList extends Node {
            tempNode = tempNode.next;
        }
     }
+    void peek(){
+        if(top==null){
+            System.out.println("Stack is empty");
+        }else {
+            System.out.println("Topmost data is ");
+            System.out.println(top.data);
+        }
+    }
 
 }
