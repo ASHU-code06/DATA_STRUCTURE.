@@ -56,6 +56,37 @@ public class Node {
         new_node.next = tempNode.next;
         tempNode.next = new_node;
     }
+    public void delete(int data){
+
+      if(head==null){
+          System.out.println("Linked list is empty");
+      }
+        System.out.println("\nThis is a deletion method  to delete any node");
+        System.out.println("Enter 1 to delete from begining");
+        System.out.println("Enter 2 to delete from end");
+        System.out.println("Enter 3 to delete from desired position");
+        int choice = new Scanner(System.in).nextInt();
+        switch (choice){
+            case 1:
+                deletefirst();
+                break;
+            case 2:
+                deleteLast();
+                break;
+            case 3:
+                deleteAtDesiredPosition();
+                break;
+            default:
+                System.out.println("Invalid input");
+        }
+    }
+    public void deletefirst(){
+        Node temporaryNode = head;
+        temporaryNode=temporaryNode.next;
+        head=temporaryNode;
+        System.out.println("Deleted successfully, Final ");
+        traverse();
+    }
     public void traverse(){
         Node tempNode = head;//declaration and initialization a tempNode of type Node
         if(tempNode==null){
