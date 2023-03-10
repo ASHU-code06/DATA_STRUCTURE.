@@ -8,6 +8,6 @@ public class LinkedList {
     node.traverse();
     node.addAtDesiredPos(30);
     node.traverse();
-    node.deletefirst();
+    node.deleteLast();
     }
 }

@@ -73,13 +73,22 @@ public class Node {
             case 2:
                 deleteLast();
                 break;
-            case 3:
-                deleteAtDesiredPosition();
-                break;
             default:
                 System.out.println("Invalid input");
         }
     }
+    public void deleteLast(){
+        Node tempNode = head;//it is a temporary node that is equal to head
+        Node pointerNode = tempNode.next;//it is a pointer node that points to next node address (has  address/next of temporary node)
+        while(pointerNode.next!=null){
+            tempNode=pointerNode;
+            pointerNode=pointerNode.next;
+        }
+        tempNode.next=null;
+        System.out.println("Deleted successfully, Final ");
+        traverse();
+    }
+
     public void deletefirst(){
         Node temporaryNode = head;
         temporaryNode=temporaryNode.next;
