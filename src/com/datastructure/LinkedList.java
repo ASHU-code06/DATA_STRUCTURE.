@@ -9,9 +9,11 @@ public class LinkedList {
     node.addAtDesiredPos(30,2);
     node.traverse();
     node.deleteLast();
-    boolean checkNode = node.search(39);
+    boolean checkNode ;
+    checkNode = node.search(30);
+    checkNode = node.search(39);
     if(!checkNode){
-        System.out.println("Linked list does not have the node");
+        System.out.println("\n\nLinked list does not have this node");
     }
     }
 }
