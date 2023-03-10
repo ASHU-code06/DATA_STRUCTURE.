@@ -7,5 +7,6 @@ public class Queue {
         ql.enqueue(30);
         ql.enqueue(70);
         ql.display();
+        ql.dequeue();
     }
 }

@@ -6,10 +6,21 @@ public class QueueUsingLinkedList extends Node {
     void enqueue(Object data) {
         append(data);
     }
+    void dequeue() {
+        if (front == null) {
+            System.out.println("Queue is empty");
+        } else {
+            System.out.println("\ndone");
+            front = front.next;
+        }
+        display();
+    }
     void display() {
         Node temp = front;//pointer of type Node
         if (front == null) {
-            System.out.println("This queue is empty");}
+            System.out.println("This queue is empty");
+        }
+        System.out.println("The front of queue is "+front.data);
         while (temp != null) {
             System.out.print(temp.data+"->");
             temp = temp.next;
