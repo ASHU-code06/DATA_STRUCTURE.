@@ -21,6 +21,9 @@ public class Main {
         System.out.println(mbn.root.left.left.left.left.value);
         System.out.println(mbn.root.right.left.right.right.value);
         System.out.println(mbn.root.right.left.right.left.value);
-
+        System.out.println(mbn.search(63));
+        System.out.println(mbn.search(645698));
+        System.out.println(mbn.search(3));
+        System.out.println(mbn.search(2));
     }
 }

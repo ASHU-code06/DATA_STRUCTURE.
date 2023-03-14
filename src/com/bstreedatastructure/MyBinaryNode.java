@@ -2,6 +2,20 @@ package com.bstreedatastructure;
 
 public class MyBinaryNode {
     Node root = null;
+    public boolean search(int value) {
+        if (root == null) return false;
+        Node temp = root;
+        while (temp != null) {
+            if (value < temp.value) {
+                temp = temp.left;
+            } else if (value > temp.value) {
+                temp = temp.right;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
     public boolean insert(int value)  {
         Node newNode = new Node(value);
         if(root==null){
